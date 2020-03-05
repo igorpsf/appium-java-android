@@ -9,7 +9,7 @@ import java.net.URL;
 
 public class base {
 
-    public static void main(String[] args) throws MalformedURLException {
+    public static AndroidDriver<AndroidElement> Capabilities() throws MalformedURLException {
         // Appium code
 
         File f = new File("src");
@@ -21,5 +21,6 @@ public class base {
         caps.setCapability(MobileCapabilityType.APP, fs.getAbsolutePath());
 
         AndroidDriver<AndroidElement> driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), caps);
+        return driver;
     }
 }
