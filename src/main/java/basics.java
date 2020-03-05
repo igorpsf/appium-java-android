@@ -20,5 +20,9 @@ public class basics extends base{
         // When you don't have unique text
         // (//android.widget.RelativeLayout)[2]
 
+        driver.findElementByClassName("android.widget.EditText").sendKeys("hello");
+
+        // Click to 2nd element from elements
+        driver.findElementsByClassName("android.widget.Button").get(1).click();
     }
 }
