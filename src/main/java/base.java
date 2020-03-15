@@ -17,6 +17,7 @@ public class base {
 
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability(MobileCapabilityType.DEVICE_NAME, "Igoremulator");
+        //caps.setCapability(MobileCapabilityType.DEVICE_NAME, "Android Device");
         caps.setCapability(MobileCapabilityType.AUTOMATION_NAME,"uiautomator2");
         caps.setCapability(MobileCapabilityType.APP, fs.getAbsolutePath());
 
