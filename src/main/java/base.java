@@ -13,12 +13,13 @@ public class base {
         // Appium code
 
         File f = new File("src");
-        File fs = new File(f, "ApiDemos-debug.apk");
+        File fs = new File(f, "General-Store.apk");
 
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability(MobileCapabilityType.DEVICE_NAME, "Igoremulator");
         //caps.setCapability(MobileCapabilityType.DEVICE_NAME, "Android Device");
         caps.setCapability(MobileCapabilityType.AUTOMATION_NAME,"uiautomator2");
+        caps.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, 14);
         caps.setCapability(MobileCapabilityType.APP, fs.getAbsolutePath());
 
         AndroidDriver<AndroidElement> driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), caps);
