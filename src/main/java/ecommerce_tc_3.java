@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
 
 public class ecommerce_tc_3 extends base{
 
-    public static void main(String[] args) throws MalformedURLException {
+    public static void main(String[] args) throws MalformedURLException, InterruptedException {
 
         AndroidDriver<AndroidElement> driver = Capabilities();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -37,5 +37,10 @@ public class ecommerce_tc_3 extends base{
             }
         }
         driver.findElement(By.id("com.androidsample.generalstore:id/appbar_btn_cart")).click();
+        Thread.sleep(4000);
+
+        String lastpageText = driver.findElement(By.id("com.androidsample.generalstore:id/productName")).getText();
+
+        Assert.assertEquals("Jordan 6 Rings", lastpageText);
     }
 }
